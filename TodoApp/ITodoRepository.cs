@@ -9,5 +9,6 @@ namespace TodoApp
     public interface ITodoRepository
     {
         IEnumerable<Todo> GetAll();
+        Todo GetById(int id);
     }
 }

@@ -20,5 +20,11 @@ namespace TodoApp.Controllers
             var model = repo.GetAll();
             return View(model);
         }
+
+        public ViewResult Details(int id)
+        {
+            var model = repo.GetById(id);
+            return View(model);
+        }
     }
 }
