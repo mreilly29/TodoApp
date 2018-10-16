@@ -1,0 +1,17 @@
+﻿@model IEnumerable<TodoApp.Models.Todo>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>this is the index</p>
+
+@foreach (var todo in Model)
+{
+    <div>
+        @todo.Id - @todo.Description
+    </div>
+}
