@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+<form action="/home/create" method="post">
+    <label for="Description">Description</label><input type="text" name="Description"/>
+    <label for="DueDate">Due Date</label><input type="date" name="DueDate" />
+    <button>Submit</button>
+
+</form>
+
+<a href="/Home/Index">Back to List</a>

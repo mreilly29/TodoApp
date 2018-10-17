@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TodoApp.Models;
 
 namespace TodoApp.Controllers
 {
@@ -22,6 +23,24 @@ namespace TodoApp.Controllers
         }
 
         public ViewResult Details(int id)
+        {
+            var model = repo.GetById(id);
+            return View(model);
+        }
+
+        public ViewResult Create()
+        {
+            return View();
+        }
+
+        [AcceptVerbs("POST")]
+        public IActionResult Create(Todo todo)
+        {
+            repo.Create(todo);            
+            return RedirectToAction("Index");
+        }
+
+        public ViewResult Delete(int id)
         {
             var model = repo.GetById(id);
             return View(model);

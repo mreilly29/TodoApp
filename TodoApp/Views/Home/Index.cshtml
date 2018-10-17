@@ -9,9 +9,11 @@
 
 <p>this is the index</p>
 
+<a href="/Home/Create">Create New Todo</a>
 @foreach (var todo in Model)
 {
     <div>
-        @todo.Id - @todo.Description
+        <a href="/home/details/@todo.Id">@todo.Id - @todo.Description </a>
+        <a href="/home/delete/@todo.Id">Delete</a>
     </div>
 }
