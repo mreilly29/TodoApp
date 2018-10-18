@@ -45,5 +45,13 @@ namespace TodoApp.Controllers
             var model = repo.GetById(id);
             return View(model);
         }
+
+        [AcceptVerbs("POST")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var todo = repo.GetById(id);
+            repo.Delete(todo);
+            return RedirectToAction("Index");
+        }
     }
 }

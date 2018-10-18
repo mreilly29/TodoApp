@@ -8,7 +8,7 @@
 <h2>Are you sure you want to delete this??</h2> 
 <h3>@Model.Id-@Model.Description-@Model.DueDate</h3>
 
-<form action="/Home/Delete/@Model.Id" method="delete">
+<form action="/Home/DeleteConfirmed/@Model.Id" method="post">
     <a href="/">Please no..</a>
     <button>KILL IT</button>
 </form>

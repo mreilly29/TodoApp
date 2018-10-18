@@ -121,15 +121,24 @@ namespace TodoApp.Tests
         }
 
         [Fact]
-        public void Delete_Deletes()
+        public void DeleteConfirmed_Deletes_The_Todo()
         {
             var toDelete = new Todo();
             var idToDelete = 42;
             repo.GetById(idToDelete).Returns(toDelete);
 
-            var result = underTest.Delete(42);
+            var result = underTest.DeleteConfirmed(42);
 
             repo.Received().Delete(toDelete);
         }
+        [Fact]
+        public void DeleteConfirmed_Redirects_To_Home()
+        {
+            var result = underTest.DeleteConfirmed(1);
+
+            Assert.IsType<RedirectToActionResult>(result);
+        }
+
+
     }
 }
